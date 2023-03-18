@@ -104,11 +104,13 @@ function sequence_keyframedata_duplicate(keyframedata_struct/*:KeyframeData*/, t
             
         case seqtracktype_message:
             var events_length = array_length(keyframedata_struct.events);
-            keyframedata_new.events = array_create(events_length);
+            var events = array_create(events_length);
             
-            for (var i = 0; i < 4; i++) {
-                keyframedata_new.events[i] = keyframedata_struct.events[i];
+            for (var i = 0; i < events_length; i++) {
+                events[i] = keyframedata_struct.events[i];
             }
+            
+            keyframedata_new.events = events;
             
             break;
             
