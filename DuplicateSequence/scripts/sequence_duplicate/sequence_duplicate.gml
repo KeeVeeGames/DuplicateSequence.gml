@@ -75,7 +75,7 @@ function sequence_keyframedata_duplicate(keyframedata_struct/*:KeyframeData*/, t
             break;
             
         case seqtracktype_real:
-            if (keyframedata_new.curve == -1) {
+            if (keyframedata_struct.curve == -1) {
                 keyframedata_new.value = keyframedata_struct.value;
             } else {
                 keyframedata_new.curve = keyframedata_struct.curve;     // TODO: Implement duplicating curves
@@ -84,11 +84,13 @@ function sequence_keyframedata_duplicate(keyframedata_struct/*:KeyframeData*/, t
             break;
             
         case seqtracktype_color:
-            keyframedata_new.color = array_create(4);
+            var color = array_create(4);
             
             for (var i = 0; i < 4; i++) {
-                keyframedata_new.color[i] = keyframedata_struct.color[i];
+                color[i] = keyframedata_struct.color[i];
             }
+			
+			keyframedata_new.color = color;
             
             break;
             
@@ -103,7 +105,7 @@ function sequence_keyframedata_duplicate(keyframedata_struct/*:KeyframeData*/, t
             break;
             
         case seqtracktype_message:
-            var events_length = array_length(keyframedata_struct.events);
+			var events_length = array_length(keyframedata_struct.events);
             var events = array_create(events_length);
             
             for (var i = 0; i < events_length; i++) {
@@ -154,8 +156,6 @@ function sequence_track_duplicate(track_struct/*:Track*/)/*->Track*/ {
     // interpolation field GameMaker bug
     if (variable_struct_exists(track_struct, "interpolation")) {
 		track_new.interpolation = track_struct.interpolation;
-	} else {
-        track_new.interpolation = true;
 	}
     
     return track_new;
