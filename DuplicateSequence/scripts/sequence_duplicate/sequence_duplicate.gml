@@ -19,7 +19,7 @@ function sequence_duplicate(sequence_struct_or_id/*:Sequence|sequence|asset_sequ
     sequence_new.yorigin                = sequence_orig.yorigin;
     sequence_new.messageEventKeyframes  = sequence_keyframes_duplicate(sequence_orig.messageEventKeyframes, seqtracktype_message);
     sequence_new.momentKeyframes        = sequence_keyframes_duplicate(sequence_orig.momentKeyframes, seqtracktype_moment);
-    sequence_new.tracks                 = sequence_tracks_duplicate(sequence_orig.tracks);
+    sequence_new.tracks                 = sequence_tracks_duplicate(array_reverse(sequence_orig.tracks));
     
     return /*#cast*/ sequence_new /*#as sequence*/;
 }
@@ -151,7 +151,10 @@ function sequence_track_duplicate(track_struct/*:Track*/)/*->Track*/ {
     track_new.name          = track_struct.name;
     track_new.tracks        = sequence_tracks_duplicate(track_struct.tracks);
     track_new.visible       = track_struct.visible;
-    track_new.keyframes     = sequence_keyframes_duplicate(track_struct.keyframes, track_new.type);
+    
+    if (track_struct.keyframes != -1) {
+        track_new.keyframes = sequence_keyframes_duplicate(track_struct.keyframes, track_new.type);
+    }
     
     // interpolation field GameMaker bug
     if (variable_struct_exists(track_struct, "interpolation")) {
