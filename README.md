@@ -8,11 +8,6 @@ One of the use cases of modifying sequences in runtime is, for example, creating
 
 In GameMaker currently, there is no built-in way to modify sequences in runtime without modifying the main sequence resource. This function is aimed to fix this issue, so you can create a duplicate of your sequence resource, modify its properties and spawn a new sequence instance without breaking the original one. This also may be useful for serialization purposes.
 
-## Installation:
-
-Copy the [script](https://github.com/KeeVeeGames/DuplicateSequence.gml/blob/main/DuplicateSequence/scripts/sequence_duplicate/sequence_duplicate.gml) into your project.   
-Or get the latest asset package from the [releases page](../../releases) and import it into IDE.
-
 ## Example:
 
 ```js
@@ -24,6 +19,11 @@ seq_new.tracks[0].keyframes[0].channels[0].text = "Hello World";    // change ne
 
 layer_sequence_create(layer, 400, 400, seq_new);                    // place new sequence in game
 ```
+
+## Installation:
+
+Copy the [script](https://github.com/KeeVeeGames/DuplicateSequence.gml/blob/main/DuplicateSequence/scripts/sequence_duplicate/sequence_duplicate.gml) into your project.   
+Or get the latest asset package from the [releases page](../../releases) and import it into IDE.
 
 ## Reference:
 
