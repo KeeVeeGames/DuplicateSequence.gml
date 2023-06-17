@@ -8,6 +8,10 @@ One of the use cases of modifying sequences in runtime is, for example, creating
 
 In GameMaker currently, there is no built-in way to modify sequences in runtime without modifying the main sequence resource. This function is aimed to fix this issue, so you can create a duplicate of your sequence resource, modify its properties and spawn a new sequence instance without breaking the original one. This also may be useful for serialization purposes.
 
+<p align="center">
+  <img src="https://keevee.games/wp-content/uploads/2023/06/sequence_duplicate_o.gif" alt="Example GIF">
+</p>
+
 ## Example:
 
 ```js
