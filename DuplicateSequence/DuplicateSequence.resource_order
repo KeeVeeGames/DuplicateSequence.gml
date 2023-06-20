@@ -17,6 +17,15 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"spr_tank_body_2","order":4,"path":"sprites/spr_tank_body_2/spr_tank_body_2.yy",},
+    {"name":"spr_tank_turret_2","order":6,"path":"sprites/spr_tank_turret_2/spr_tank_turret_2.yy",},
+    {"name":"seq_tank","order":1,"path":"sequences/seq_tank/seq_tank.yy",},
+    {"name":"spr_tank_tracks_template","order":2,"path":"sprites/spr_tank_tracks_template/spr_tank_tracks_template.yy",},
+    {"name":"spr_tank_body_1","order":3,"path":"sprites/spr_tank_body_1/spr_tank_body_1.yy",},
+    {"name":"spr_tank_turret_template","order":1,"path":"sprites/spr_tank_turret_template/spr_tank_turret_template.yy",},
+    {"name":"spr_tank_turret_1","order":5,"path":"sprites/spr_tank_turret_1/spr_tank_turret_1.yy",},
+    {"name":"spr_tank_tracks_1","order":7,"path":"sprites/spr_tank_tracks_1/spr_tank_tracks_1.yy",},
     {"name":"sequence_duplicate","order":1,"path":"scripts/sequence_duplicate/sequence_duplicate.yy",},
+    {"name":"spr_tank_tracks_2","order":8,"path":"sprites/spr_tank_tracks_2/spr_tank_tracks_2.yy",},
   ],
 }
