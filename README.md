@@ -40,7 +40,8 @@ This function will return a new sequence struct that is a deep copy of the sourc
 | sequence_struct_or_id | `Asset.GMSequence` or `Struct.Sequence` | The sequence index from the asset browser or sequence object struct |
 
 **Returns:** `Struct.Sequence`
-## 
+<details>
+<summary><h3>Additional functions</h1></summary>
 
 ### `sequence_keyframes_duplicate(keyframes, type)` ➞ `Struct.Keyframe[]`
 This function will return a new array of keyframes with deep copies of source keyframes.
@@ -110,6 +111,7 @@ This function will return a new track struct that is a deep copy of the source t
 | track_struct | `Struct.Track`               | The track struct to duplicate                                              |
 
 **Returns:** `Struct.Track`
+</details>
 
 ## Authors:
 Nikita Musatov - [MusNik / KeeVee Games](https://twitter.com/keeveegames)
