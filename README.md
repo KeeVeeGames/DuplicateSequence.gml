@@ -2,11 +2,11 @@
 
 [![Donate](https://img.shields.io/badge/donate-%E2%9D%A4-blue.svg)](https://musnik.itch.io/donate-me) [![License](https://img.shields.io/github/license/KeeVeeGames/DuplicateSequence.gml)](#!)
 
+In GameMaker currently, there is no built-in way to modify sequences in runtime without modifying the main sequence resource. This function is aimed to fix this issue, so you can create a duplicate of your sequence resource, modify its properties and spawn a new sequence instance without breaking the original one. This also may be useful for serialization purposes.
+
 This is a collection of scripts providing a simple way to deep copy sequences and sequence fields in your GameMaker projects. Deep copying ensures that a new independent copy of a sequence is created, allowing you to modify and manipulate the copy without affecting the original sequence. It allows you to copy sequences itself, as well as keyframes, keyframe data and tracks separately.
 
 One of the use cases of modifying sequences in runtime is, for example, creating a layout for UI button / resource art / character animation with placeholder images and text in the IDE, and then change it with the final ones for each instance before sending them on screen.
-
-In GameMaker currently, there is no built-in way to modify sequences in runtime without modifying the main sequence resource. This function is aimed to fix this issue, so you can create a duplicate of your sequence resource, modify its properties and spawn a new sequence instance without breaking the original one. This also may be useful for serialization purposes.
 
 <p align="center">
   <img src="https://keevee.games/wp-content/uploads/2023/06/sequence_duplicate_o.gif" alt="Example GIF">
