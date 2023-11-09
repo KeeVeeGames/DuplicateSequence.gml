@@ -10,6 +10,7 @@ One of the use cases of modifying sequences in runtime is, for example, creating
 
 <p align="center">
   <img src="https://keevee.games/wp-content/uploads/2023/06/sequence_duplicate_o.gif" alt="Example GIF">
+  <br><sub>notice how the modification of sequence properties (tank's sprite) is also altering<br>the originally spawned sequence on the left, which is not happening with sequence_duplicate</sub>
 </p>
 
 ## Example:
