@@ -4,8 +4,8 @@
 /// @description                                                        This function will return a new sequence struct that is a deep copy of the source sequence.
 function sequence_duplicate(sequence_struct_or_id/*:Sequence|sequence|asset_sequence*/)/*->sequence*/ {
     var sequence_orig/*:Sequence*/;
-    
-    if (is_real(sequence_struct_or_id)) {
+	
+    if (!is_struct(sequence_struct_or_id)) {
         sequence_orig = sequence_get(sequence_struct_or_id);
     } else {
         sequence_orig = sequence_struct_or_id /*#as Sequence*/;
@@ -23,7 +23,7 @@ function sequence_duplicate(sequence_struct_or_id/*:Sequence|sequence|asset_sequ
     sequence_new.yorigin                = sequence_orig.yorigin;
     sequence_new.messageEventKeyframes  = sequence_keyframes_duplicate(sequence_orig.messageEventKeyframes, seqtracktype_message);
     sequence_new.momentKeyframes        = sequence_keyframes_duplicate(sequence_orig.momentKeyframes, seqtracktype_moment);
-    sequence_new.tracks                 = sequence_tracks_duplicate(array_reverse(sequence_orig.tracks));
+    sequence_new.tracks                 = sequence_tracks_duplicate(os_browser == browser_not_a_browser ? array_reverse(sequence_orig.tracks) : sequence_orig.tracks);
     
     return /*#cast*/ sequence_new /*#as sequence*/;
 }
