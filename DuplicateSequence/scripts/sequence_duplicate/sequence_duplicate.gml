@@ -190,6 +190,9 @@ function sequence_keyframedata_duplicate(keyframedata_struct/*:sequence_keyframe
             (/*#cast*/ keyframedata_new /*#as sequence_keyframe_data_particlesystem*/).particleSystemIndex = (/*#cast*/ keyframedata_struct /*#as sequence_keyframe_data_particlesystem*/).particleSystemIndex;
             
             break;
+            
+        default:
+            show_debug_message($"[sequence_duplicate] Warning! Unknown track type {type}");
     }
     
     return keyframedata_new;
