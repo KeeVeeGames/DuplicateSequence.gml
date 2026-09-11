@@ -161,6 +161,7 @@ function sequence_keyframedata_duplicate(keyframedata_struct/*:sequence_keyframe
             (/*#cast*/ keyframedata_new /*#as sequence_keyframe_data_text*/).alignmentH = (/*#cast*/ keyframedata_struct /*#as sequence_keyframe_data_text*/).alignmentH;
             (/*#cast*/ keyframedata_new /*#as sequence_keyframe_data_text*/).alignmentV = (/*#cast*/ keyframedata_struct /*#as sequence_keyframe_data_text*/).alignmentV;
             (/*#cast*/ keyframedata_new /*#as sequence_keyframe_data_text*/).fontIndex = (/*#cast*/ keyframedata_struct /*#as sequence_keyframe_data_text*/).fontIndex;
+            (/*#cast*/ keyframedata_new /*#as sequence_keyframe_data_text*/).origin = (/*#cast*/ keyframedata_struct /*#as sequence_keyframe_data_text*/).origin;
             
             break;
     }
