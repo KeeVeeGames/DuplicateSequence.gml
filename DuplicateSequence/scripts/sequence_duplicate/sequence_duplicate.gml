@@ -239,3 +239,52 @@ function sequence_track_duplicate(track_struct/*:sequence_track*/)/*->sequence_t
     
     return track_new;
 }
+
+/// @pure
+/// @param {Asset.GMSequence|Struct.Sequence} sequence_struct_or_id     The sequence index from the asset browser or sequence object struct.
+/// @returns {Bool}
+/// @description                                                        This function will check the sequence for errors, print any errors to the Output, and return false if any are found; otherwise, will return true.
+function sequence_validate(sequence_struct_or_id/*:sequence|sequence_object*/)/*->bool*/ {
+    /// @hint sequence_validate(sequence_struct_or_id:sequence|sequence_object)->bool
+    
+    var sequence_orig/*:sequence_object*/;
+    
+    if (!is_struct(sequence_struct_or_id)) {
+        sequence_orig = sequence_get(sequence_struct_or_id /*#as sequence*/);
+    } else {
+        sequence_orig = sequence_struct_or_id /*#as sequence_object*/;
+    }
+    
+    return sequence_tracks_validate($"[{sequence_orig.name}]", sequence_orig.tracks);
+}
+
+/// @pure
+/// @param {Array<Struct.Track>} tracks             The source array that holds track structs of a sequence.
+/// @returns {Array<Struct.Track>}
+/// @description                                    This function will check the sequence tracks for errors, print any errors to the Output, and return false if any are found; otherwise, will return true.
+function sequence_tracks_validate(route/*:string*/, tracks/*:sequence_track[]*/)/*->bool*/ {
+    /// @hint sequence_tracks_validate(route:string, tracks:sequence_track[])->bool
+    
+    var tracks_length = array_length(tracks);
+    var names_seen = {};
+    var result = true;
+    
+    for (var i = 0; i < tracks_length; i++) {
+        var track = tracks[i];
+        var name = track.name;
+        var hash = variable_get_hash(name);
+        
+        if (struct_exists_from_hash(names_seen, hash)) {
+            show_debug_message($"[sequence_duplicate] Validation: duplicate track found in {route}! Track [{name}] is present more than once; expect unstable behaviour. Check the .yy file of the original sequence and remove the incorrect duplicate track.");
+            result = false;
+        } else {
+            struct_set_from_hash(names_seen, hash, name);
+        }
+        
+        if (sequence_tracks_validate($"{route}:[{track.name}]", track.tracks) == false) {
+            result = false;
+        }
+    }
+    
+    return result;
+}
