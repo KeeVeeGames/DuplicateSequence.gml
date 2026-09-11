@@ -133,6 +133,12 @@ function sequence_keyframedata_duplicate(keyframedata_struct/*:sequence_keyframe
             (/*#cast*/ keyframedata_new /*#as sequence_keyframe_data_bool*/).value = (/*#cast*/ keyframedata_struct /*#as sequence_keyframe_data_bool*/).value;
             
             break;
+            
+        case seqtracktype_string:
+            (/*#cast*/ keyframedata_new /*#as sequence_keyframe_data_string*/).value = (/*#cast*/ keyframedata_struct /*#as sequence_keyframe_data_string*/).value;
+            
+            break;
+            
         case seqtracktype_sequence:
             (/*#cast*/ keyframedata_new /*#as sequence_keyframe_data_sequence*/).sequence = /*#cast*/ sequence_duplicate((/*#cast*/ keyframedata_struct /*#as sequence_keyframe_data_sequence*/).sequence);
             
