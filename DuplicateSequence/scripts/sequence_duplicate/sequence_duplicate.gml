@@ -3,10 +3,10 @@
 /// @returns {Struct.Sequence}
 /// @description                                                        This function will return a new sequence struct that is a deep copy of the source sequence.
 function sequence_duplicate(sequence_struct_or_id/*:sequence|sequence_object*/)/*->sequence_object*/ {
-	/// @hint sequence_duplicate(sequence_struct_or_id:sequence|sequence_object)->sequence_object
-	
+    /// @hint sequence_duplicate(sequence_struct_or_id:sequence|sequence_object)->sequence_object
+    
     var sequence_orig/*:sequence_object*/;
-	
+    
     if (!is_struct(sequence_struct_or_id)) {
         sequence_orig = sequence_get(sequence_struct_or_id /*#as sequence*/);
     } else {
@@ -36,8 +36,8 @@ function sequence_duplicate(sequence_struct_or_id/*:sequence|sequence_object*/)/
 /// @returns {Array<Struct.Keyframe>}
 /// @description                                    This function will return a new array of keyframes with deep copies of source keyframes.
 function sequence_keyframes_duplicate(keyframes/*:sequence_keyframe[]*/, type/*:sequence_track_type*/)/*->sequence_keyframe[]*/ {
-	/// @hint sequence_keyframes_duplicate(keyframes:sequence_keyframe[], type:sequence_track_type)->sequence_keyframe[]
-	
+    /// @hint sequence_keyframes_duplicate(keyframes:sequence_keyframe[], type:sequence_track_type)->sequence_keyframe[]
+    
     var keyframes_length = array_length(keyframes);
     var keyframes_new/*:sequence_keyframe[]*/ = array_create(keyframes_length);
     
@@ -54,8 +54,8 @@ function sequence_keyframes_duplicate(keyframes/*:sequence_keyframe[]*/, type/*:
 /// @returns {Struct.Keyframe}
 /// @description                                    This function will return a new keyframe struct that is a deep copy of the source sequence keyframe.
 function sequence_keyframe_duplicate(keyframe_struct/*:sequence_keyframe*/, type/*:sequence_track_type*/)/*->sequence_keyframe*/ {
-	/// @hint sequence_keyframe_duplicate(keyframe_struct:sequence_keyframe, type:sequence_track_type)->sequence_keyframe
-	
+    /// @hint sequence_keyframe_duplicate(keyframe_struct:sequence_keyframe, type:sequence_track_type)->sequence_keyframe
+    
     var keyframe_new/*:sequence_keyframe*/ = sequence_keyframe_new(type);
     
     keyframe_new.frame      = keyframe_struct.frame;
@@ -72,8 +72,8 @@ function sequence_keyframe_duplicate(keyframe_struct/*:sequence_keyframe*/, type
 /// @returns {Array<Struct.KeyframeData>}
 /// @description                                            This function will return a new array of keyframe data with a deep copy of the source keyframe data.
 function sequence_keyframedatas_duplicate(keyframedatas/*:sequence_keyframe_data[]*/, type/*:sequence_track_type*/)/*->sequence_keyframe_data[]*/ {
-	/// @hint sequence_keyframedatas_duplicate(keyframedatas:sequence_keyframe_data[], type:sequence_track_type)->sequence_keyframe_data[]
-	
+    /// @hint sequence_keyframedatas_duplicate(keyframedatas:sequence_keyframe_data[], type:sequence_track_type)->sequence_keyframe_data[]
+    
     var keyframedatas_length = array_length(keyframedatas);
     var keyframedatas_new/*:sequence_keyframe_data[]*/ = array_create(keyframedatas_length);
     
@@ -90,8 +90,8 @@ function sequence_keyframedatas_duplicate(keyframedatas/*:sequence_keyframe_data
 /// @returns {Struct.KeyframeData}
 /// @description                                            This function will return a new keyframe data struct that is a deep copy of the source keyframe data struct.
 function sequence_keyframedata_duplicate(keyframedata_struct/*:sequence_keyframe_data*/, type/*:sequence_track_type*/)/*->sequence_keyframe_data*/ {
-	/// @hint sequence_keyframedata_duplicate(keyframedata_struct:sequence_keyframe_data, type:sequence_track_type)->sequence_keyframe_data
-	
+    /// @hint sequence_keyframedata_duplicate(keyframedata_struct:sequence_keyframe_data, type:sequence_track_type)->sequence_keyframe_data
+    
     var keyframedata_new/*:sequence_keyframe_data*/ = sequence_keyframedata_new(type);
     
     keyframedata_new.channel = keyframedata_struct.channel;
@@ -203,8 +203,8 @@ function sequence_keyframedata_duplicate(keyframedata_struct/*:sequence_keyframe
 /// @returns {Array<Struct.Track>}
 /// @description                                    This function will return a new array of tracks with a deep copy of the source tracks.
 function sequence_tracks_duplicate(tracks/*:sequence_track[]*/)/*->sequence_track[]*/ {
-	/// @hint sequence_tracks_duplicate(tracks:sequence_track[])->sequence_track[]
-	
+    /// @hint sequence_tracks_duplicate(tracks:sequence_track[])->sequence_track[]
+    
     var tracks_length = array_length(tracks);
     var tracks_new/*:sequence_track[]*/ = array_create(tracks_length);
     
@@ -220,8 +220,8 @@ function sequence_tracks_duplicate(tracks/*:sequence_track[]*/)/*->sequence_trac
 /// @returns {Struct.Track}
 /// @description                                    This function will return a new track struct that is a deep copy of the source track struct.
 function sequence_track_duplicate(track_struct/*:sequence_track*/)/*->sequence_track*/ {
-	/// @hint sequence_track_duplicate(track_struct:sequence_track)->sequence_track
-	
+    /// @hint sequence_track_duplicate(track_struct:sequence_track)->sequence_track
+    
     var track_new/*:sequence_track*/ = sequence_track_new(track_struct.type);
     
     track_new.name          = track_struct.name;
