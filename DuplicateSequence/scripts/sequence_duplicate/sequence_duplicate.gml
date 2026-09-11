@@ -128,6 +128,16 @@ function sequence_keyframedata_duplicate(keyframedata_struct/*:sequence_keyframe
             
             break;
             
+        case seqtracktype_colour:
+            var colour/*:int[]*/ = array_create(4);     // correct spelling!!
+            
+            for (var i = 0; i < 4; i++) {
+                colour[i] = (/*#cast*/ keyframedata_struct /*#as sequence_keyframe_data_colour*/).colour[i];
+            }
+            
+            (/*#cast*/ keyframedata_new /*#as sequence_keyframe_data_colour*/).colour = colour;
+            
+            break;
             
         case seqtracktype_bool:
             (/*#cast*/ keyframedata_new /*#as sequence_keyframe_data_bool*/).value = (/*#cast*/ keyframedata_struct /*#as sequence_keyframe_data_bool*/).value;
