@@ -1,7 +1,7 @@
 layer_sequence_create(layer, room_width / 4, room_height / 2, seq_tank);
 
-seq_tank1 = sequence_duplicate(seq_tank);
-seq_tank2 = sequence_duplicate(seq_tank);
+var seq_tank1 = sequence_duplicate(seq_tank);
+var seq_tank2 = sequence_duplicate(seq_tank);
 
 layer_sequence_create(layer, room_width / 4 * 2, room_height / 2, seq_tank1);
 layer_sequence_create(layer, room_width / 4 * 3, room_height / 2, seq_tank2);
