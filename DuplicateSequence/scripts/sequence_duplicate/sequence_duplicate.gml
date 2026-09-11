@@ -175,6 +175,11 @@ function sequence_keyframedata_duplicate(keyframedata_struct/*:sequence_keyframe
             (/*#cast*/ keyframedata_new /*#as sequence_keyframe_data_text*/).origin = (/*#cast*/ keyframedata_struct /*#as sequence_keyframe_data_text*/).origin;
             
             break;
+            
+        case seqtracktype_particlesystem:
+            (/*#cast*/ keyframedata_new /*#as sequence_keyframe_data_particlesystem*/).particleSystemIndex = (/*#cast*/ keyframedata_struct /*#as sequence_keyframe_data_particlesystem*/).particleSystemIndex;
+            
+            break;
     }
     
     return keyframedata_new;
