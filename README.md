@@ -1,6 +1,6 @@
 # DuplicateSequence.gml
 
-[![Donate](https://img.shields.io/badge/donate-%E2%9D%A4-blue.svg)](https://musnik.itch.io/donate-me) [![License](https://img.shields.io/github/license/KeeVeeGames/DuplicateSequence.gml)](#!)
+[![Donate](https://img.shields.io/badge/donate-%E2%9D%A4-blue.svg)](https://musnik.itch.io/donate) [![License](https://img.shields.io/github/license/KeeVeeGames/DuplicateSequence.gml)](#!)
 
 In GameMaker currently, there is no built-in way to modify sequences in runtime without modifying the main sequence resource. This function is aimed to fix this issue, so you can create a duplicate of your sequence resource, modify its properties and spawn a new sequence instance without breaking the original one. This also may be useful for serialization purposes.
 
